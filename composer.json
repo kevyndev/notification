@@ -1,0 +1,21 @@
+{
+  "name": "kevyndev/notification",
+  "description": "description",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevyn Nathan",
+      "email": "kevynn.nathann@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "6.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "notification\\": "_app"
+    }
+  }
+}
