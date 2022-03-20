@@ -9,21 +9,21 @@
     {
         private $mail = \stdClass::class;
 
-        public function __construct()
+        public function __construct($smtpDebug, $host, $user, $pass, $smtpSecure, $port, $setFromEmail, $setFromName)
         {
             $this->mail = new PHPMailer(true);
-            $this->mail->SMTPDebug = 2;
+            $this->mail->SMTPDebug = $smtpDebug;
             $this->mail->isSMTP();
-            $this->mail->Host = '';
+            $this->mail->Host = $host;
             $this->mail->SMTPAuth = true;
-            $this->mail->Username = '';
-            $this->mail->Password = '';
-            $this->mail->SMTPSecure = '';
-            $this->mail->Port = 587;
+            $this->mail->Username = $user;
+            $this->mail->Password = $pass;
+            $this->mail->SMTPSecure = $smtpSecure;
+            $this->mail->Port = $port;
             $this->mail->CharSet = 'utf-8';
             $this->mail->setLanguage('br');
             $this->mail->isHTML(true);
-            $this->mail->setFrom('','');
+            $this->mail->setFrom($setFromEmail,$setFromName);
         }
 
         public function sendEmail($subject, $body, $replyEmail, $replyName, $addressEmail, $addressName)
