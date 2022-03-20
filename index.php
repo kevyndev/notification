@@ -1,19 +1,8 @@
 <?php
 
-    namespace notification;
+    require __DIR__ . "/vendor/autoload.php";
 
-    use PHPMailer\PHPMailer\PHPMailer;
+    use notification\email;
 
-    class email
-    {
-
-        public function __construct()
-        {
-            $email = new PHPMailer;
-        }
-
-        public function sendEmail()
-        {
-            echo "E-mail enviado!";
-        }
-    }
+    $novoEmail = new email;
+    $novoEmail->sendEmail();
